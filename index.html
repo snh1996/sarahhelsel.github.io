@@ -1,7 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello JavaScript!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+  </head>
+
   <body>
-    <script></script>
+    <section class="section">
+      <div id="big-bean-energy" class="container">
+        <span class="tag is-primary" onclick="CoolBeans()">Bean</span>
+        <div class="field">
+          <div class="control">
+            <div class="select is-primary">
+              <select id="bean-dropdown">
+                <option>Bean</option>
+                <option>BEAN</option>
+                <option>bean</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </section>
+    <script>
+      function CoolBeans() {
+        let numOfBeans;
+        let beanDropdown = document.getElementById("bean-dropdown");
+        let beanValue = beanDropdown.options[beanDropdown.selectedIndex].value;
+
+        if (beanValue === "Bean") {
+          numOfBeans = 5;
+        } else if (beanValue === "BEAN") {
+          numOfBeans = 10;
+        } else if (beanValue === "bean") {
+          numOfBeans = 1;
+        } else {
+          // we'll never hit this else
+          //  because there is no "else" option in the dropdown.
+          // numOfBeans = 3; // some default "else" options
+        }
+
+        for (let i = 0; i < numOfBeans; i++) {
+          document.getElementById(
+            "big-bean-energy"
+          ).innerHTML += `<span class="tag is-primary">Bean</span>`;
+        }
+
+        document.getElementById("bean-dropdown").selectedIndex =
+          beanDropdown.selectedIndex;
+      }
+    </script>
   </body>
 </html>
