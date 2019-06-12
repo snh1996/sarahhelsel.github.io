@@ -61,4 +61,52 @@
       }
     </script>
   </body>
+  sarah's button 
+  <body>
+    <section class="section">
+      <div id="puppups" class="container">
+        <span class="tag is-primary" onclick="puppups()">pups</span>
+        <div class="field">
+          <div class="control">
+            <div class="select is-primary">
+              <select id="puppups-dropdown">
+                <option>pup</option>
+                <option>PUPS</option>
+                <option>puppup</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </section>
+    <script>
+      function Puppups() {
+        let numOfpups;
+        let pupDropdown = document.getElementById("pup-dropdown");
+        let pupValue = pupDropdown.options[pupDropdown.selectedIndex].value;
+
+        if (pupValue === "pup") {
+          numOfpups = 8;
+        } else if (pupValue === "PUPS") {
+          numOfpups = 16;
+        } else if (pupValue === "puppup") {
+          numOfpups = 1;
+        } else {
+          // we'll never hit this else
+          //  because there is no "else" option in the dropdown.
+          // numOfBeans = 3; // some default "else" options
+        }
+
+        for (let i = 0; i < numOfBeans; i++) {
+          document.getElementById(
+            "puppup-energy"
+          ).innerHTML += `<span class="tag is-primary">pup</span>`;
+        }
+
+        document.getElementById("puppup-dropdown").selectedIndex =
+          pupDropdown.selectedIndex;
+      }
+    </script>
+  </body>
 </html>
